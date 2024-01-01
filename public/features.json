@@ -1,0 +1,26 @@
+ [
+    {
+      "id": 1,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAtZDLXdQgPloeZ-C2MXN86MTvzoQlVmystQ&usqp=CAU",
+      "title": "Tech Summit 2023",
+      "description": "Join us for the most anticipated technology summit of the year!"
+    },
+    {
+      "id": 2,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQt5hYn7-GYpOUCxwm5cIpyx3RS3VLDDVQhd1M8J7lmR0ih62oArcI_ja8vy_AQ66TJxU&usqp=CAU",
+      "title": "Unleashing Creativity",
+      "description": "Immerse yourself in the world of art at our exclusive Art Expo."
+    },
+    {
+      "id": 3,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFQnFMNWFvUxsZfDzEFCNCP_XRTlhCjmBHuBZCt-sNRujfkWNcMnZDc3InklT91sqqKK4&usqp=CAU",
+      "title": "Business Forum",
+      "description": "Unlock the secrets of business success at the Business Forum."
+    },
+    {
+      "id": 4,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkTZcE071CP_prJcU5Z4SPpe75xWlzLmljvw&usqp=CAU",
+      "title": "Wellness Retreat Mind.",
+      "description": " Embark on a journey of self-discovery through yoga, meditation."
+    }
+  ]
