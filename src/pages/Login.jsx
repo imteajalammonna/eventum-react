@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
-        <div className=" md:bg-base-200 mt-24 md:mt-0">
+        <div className="m-10 md:mt-0">
             <div className="md:hero md:min-h-screen  md:container mx-auto ">
                 <div className="md:hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold md:mt-20">Login now!</h1>
+                        <h1 className="text-5xl font-bold mt-20">Login now!</h1>
                         <p className="py-6 md:w-[500px]">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
