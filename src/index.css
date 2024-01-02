@@ -4,10 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+* {
     font-family: 'Poppins', sans-serif;
 }
-
+.header {
+    
+}
 #banner {
     background-image: url("https://i.ibb.co/h7FvBtJ/banner.png");
     background-position: center;
@@ -35,7 +37,7 @@ body {
 }
 
 /* CSS */
-.button-28 {
+.button {
     /* appearance: none; */
     background-color: transparent;
     border: 2px solid #FE0233;
@@ -48,7 +50,7 @@ body {
     font-size: 18px;
     font-weight: 600;
     line-height: normal;
-    margin: 0px 10px;
+    /* margin: 0px 10px; */
     min-height: 50px;
     min-width: 500;
     outline: none;
@@ -63,18 +65,28 @@ body {
     will-change: transform;
 }
 
-.button-28:disabled {
+.button:disabled {
     pointer-events: none;
 }
 
-.button-28:hover {
+.button:hover {
     color: #fff;
     background-color: #FE0233;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
 
-.button-28:active {
+.button:active {
     box-shadow: none;
     transform: translateY(0);
+}
+
+.btn-fill {
+    background-color: #FE0233;
+    color: #ffff;
+}
+
+.btn-fill:hover {
+    background-color: transparent;
+    color: #FE0233;
 }

@@ -1,6 +1,6 @@
 
 
-const Features = () => {
+const Details = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Features = () => {
     );
 };
 
-export default Features;
+export default Details;

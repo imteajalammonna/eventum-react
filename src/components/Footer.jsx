@@ -1,4 +1,4 @@
-import Eventum from "../../public/Eventum.png"
+import Eventum from "../../src/assets/rsz_eventum.png"
 
 const Footer = () => {
     return (

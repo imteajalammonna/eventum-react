@@ -7,6 +7,10 @@ import {
 import "./index.css";
 import App from "./App";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Services from "./pages/Services";
+// import Details from "./components/Details";
+import Register from "./pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +20,22 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/services",
+        element: <Services></Services>
+      },
+      // {
+      //   path: `/details/${service.id}`,
+      //   element: <Details></Details>
+      // },
+      {
+        path: "/register",
+        element: <Register></Register>
       }
     ]
   },

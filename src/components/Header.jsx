@@ -1,18 +1,42 @@
 import { Link, NavLink } from "react-router-dom";
-import Button from "./Button";
-import Eventum from "../../public/Eventum.png";
+import Eventum from "../../src/assets/rsz_eventum.png";
+import { useEffect, useState } from "react";
 
 
 const Header = () => {
+    const [scrolling , setScrolling] = useState(false);
+
+    useEffect(()=> {
+       const handleScroll = ( ) => {
+        if(window.scrollY > window.innerHeight * 0.1){
+            setScrolling(true);
+        }
+        else{
+            setScrolling(false);
+        }
+       }
+
+       window.addEventListener('scroll', handleScroll);
+       return () => {
+         window.removeEventListener('scroll', handleScroll);
+       };
+    },[])
+
+    const navbarClasses = ` fixed  top-0 w-full z-10 ${scrolling ? 'bg-white text-black ' : ''}`;
+
+
     const links = <>
         <NavLink className="nav" to="/">Home</NavLink>
         <NavLink className="nav" to="/about">Profile</NavLink>
         <NavLink className="nav" to="/events">Events</NavLink>
         <NavLink className="nav" to="/contact">Contact</NavLink>
     </>
+
+    
+
     return (
-        <div className="container mx-auto">
-            <div className="navbar">
+        <div className={navbarClasses}>
+            <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -22,7 +46,7 @@ const Header = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link className=" text-2xl font-bold flex items-center justify-center"><img className="w-9 h-auto rounded-xl" src={Eventum} alt="" />EVENTUM</Link>
+                    <Link to="/" className=" text-2xl font-bold flex items-center justify-center"><img className="w-9 h-auto rounded-xl" src={Eventum} alt="" />EVENTUM</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal text-xl px-1">
@@ -30,8 +54,8 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end hidden sm:flex ">
-                    <Button btnName="Login"></Button>
-                    <Button btnName="Register"></Button>
+                    <Link to="/register">  <button className="button mr-4">Register</button></Link>
+                    <Link to="/login"> <button className="button btn-fill">Login</button></Link>
                 </div>
             </div>
         </div>
