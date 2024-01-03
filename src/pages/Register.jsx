@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
     return (
-        <div className=" bg-base-200 ">
-            <div className="hero min-h-screen container mx-auto ">
+        <div className="bg-base-200 ">
+            <div className="md:hero md:min-h-screen md:container md:mx-auto ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Register now!</h1>
-                        <p className="py-6 w-[500px]">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <h1 className="text-5xl mt-16 font-bold">Register now!</h1>
+                        <p className="py-6 md:w-[500px]">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
-                    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card mx-auto shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form className="card-body">
                             <div className="form-control">
                                 <label className="label">
