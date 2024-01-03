@@ -36,7 +36,7 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button className="button btn-fill">Register</button>
                             </div>
-                            <p>Already have an account? <Link to="/login" className="underline text-blue-600 ">Login here</Link> </p>
+                            <p>Already have an account? <Link to="/login" className="underline text-[#06d425]">Login here</Link> </p>
                         </form>
                     </div>
                 </div>

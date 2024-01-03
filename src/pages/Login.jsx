@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
-        <div className="m-3">
+        <div className=" bg-base-200">
             <div className="md:hero md:min-h-screen  md:container mx-auto ">
                 <div className="md:hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
