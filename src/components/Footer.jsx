@@ -10,8 +10,8 @@ const Footer = () => {
                     <header className="footer-title">Services</header>
                     <a className="link link-hover">Branding</a>
                     <a className="link link-hover">Design</a>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <Link className="link link-hover" to="/login">Login</Link>
+                    <Link className="link link-hover" to="/register">Register</Link>
                 </nav>
                 <nav>
                     <header className="footer-title">Company</header>
@@ -29,15 +29,24 @@ const Footer = () => {
             </footer>
             <footer className="footer container mx-auto px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
                 <aside className="items-center grid-flow-col">
-                    <img className="w-12 rounded-xl" src={Eventum} alt="" />
+                    <Link to="/"><img className="w-12 rounded-xl" src={Eventum} alt="" /></Link>
                     <p>Eventum Industries Ltd.<sup>®</sup> <br />Providing reliable Event Management Service since 1992</p>
                 </aside>
                 <nav className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4 ">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/imteajalammonna"><FaFacebook className="text-2xl text-[#0866FF] hover:text-[#FE0233]" ></FaFacebook></a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/imteajalammonna/"><FaInstagram className="text-2xl weit text-[rgb(250,58,180)]  hover:text-[#FE0233]" ></FaInstagram></a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/imteaj-alam-monna/"><FaLinkedin className="text-2xl text-[#0A66C2] hover:text-[#FE0233]" ></FaLinkedin> </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCmqM9MJMAybSmfBG-JHvNlg"><FaYoutube className="text-2xl text-[#FF0000] hover:text-[#FE0233]" ></FaYoutube></a>
+
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/imteajalammonna">
+                            <FaFacebook className="text-2xl text-[#0866FF] hover:text-[#FE0233]" ></FaFacebook>
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/imteajalammonna/">
+                            <FaInstagram className="text-2xl text-[rgb(250,58,180)] hover:text-[#FE0233]"></FaInstagram>
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/imteaj-alam-monna/">
+                            <FaLinkedin className="text-2xl text-[#0A66C2] hover:text-[#FE0233]" ></FaLinkedin>
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCmqM9MJMAybSmfBG-JHvNlg">
+                            <FaYoutube className="text-2xl text-[#FF0000] hover:text-[#FE0233]" ></FaYoutube>
+                        </a>
 
                     </div>
                 </nav>

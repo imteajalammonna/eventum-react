@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
-        <div className=" bg-base-200">
-            <div className="md:hero md:min-h-screen  md:container mx-auto ">
+        <div className=" bg-gray-400">
+            <div className="md:hero md:min-h-screen  md:container md:mx-auto ">
                 <div className="md:hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold mt-20">Login now!</h1>
@@ -31,6 +31,8 @@ const Login = () => {
                                 <button className="button btn-fill">Login</button>
                             </div>
                             <p>New to here? Please <Link to="/register" className="underline text-[#06d425]">Register here</Link> </p>
+
+                            <a className=" cursor-pointer button flex items-center justify-center " rel="noopener noreferrer" target="_blank" href="https://direct-dl.lol/dd/?file=AF1QipOy63QJZV6UXUxZhZpQ4D1wogbQ6iiiWwmtAchm">Download </a>
                         </form>
                     </div>
                 </div>

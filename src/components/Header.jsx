@@ -4,25 +4,25 @@ import { useEffect, useState } from "react";
 
 
 const Header = () => {
-    const [scrolling , setScrolling] = useState(false);
+    const [scrolling, setScrolling] = useState(false);
 
-    useEffect(()=> {
-       const handleScroll = ( ) => {
-        if(window.scrollY > window.innerHeight * 0.1){
-            setScrolling(true);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > window.innerHeight * 0.1) {
+                setScrolling(true);
+            }
+            else {
+                setScrolling(false);
+            }
         }
-        else{
-            setScrolling(false);
-        }
-       }
 
-       window.addEventListener('scroll', handleScroll);
-       return () => {
-         window.removeEventListener('scroll', handleScroll);
-       };
-    },[])
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [])
 
-    const navbarClasses = ` fixed  top-0 w-full z-10 ${scrolling ? 'bg-white text-black ' : ''}`;
+    const navbarClasses = ` fixed  top-0 w-full z-10 " ${scrolling ? 'bg-white shadow-lg text-black ' : 'text-white'}`;
 
 
     const links = <>
@@ -30,12 +30,13 @@ const Header = () => {
         <NavLink className="nav" to="/about">Profile</NavLink>
         <NavLink className="nav" to="/events">Events</NavLink>
         <NavLink className="nav" to="/contact">Contact</NavLink>
+        <NavLink className="nav" to="/movies">Movies</NavLink>
     </>
 
-    
+
 
     return (
-        <div className={navbarClasses}>
+        <div className={navbarClasses} >
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -46,7 +47,7 @@ const Header = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to="/" className=" text-2xl font-bold flex items-center justify-center"><img className="w-9 h-auto rounded-xl" src={Eventum} alt="" />EVENTUM</Link>
+                    <Link to="/" className=" text-2xl font-bold flex items-center justify-center"><img className="w-9 h-auto rounded-xl mr-2" src={Eventum} alt="" />   EVENTUM</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal text-xl px-1">

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
     return (
-        <div className="bg-base-200 ">
+        <div className="bg-gray-400 ">
             <div className="md:hero md:min-h-screen md:container md:mx-auto ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">

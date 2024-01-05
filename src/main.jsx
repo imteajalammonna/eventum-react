@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Services from "./pages/Services";
 // import Details from "./components/Details";
 import Register from "./pages/Register";
+import MoviePage from "./pages/MoviePage";
 
 const router = createBrowserRouter([
   {
@@ -30,12 +31,17 @@ const router = createBrowserRouter([
         element: <Services></Services>
       },
       // {
-      //   path: `/details/${service.id}`,
-      //   element: <Details></Details>
+      //   path: "/details/:stringId",
+      //   element: <Details></Details>,
+      //   loader: () => fetch("/services.json")
       // },
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/movies",
+        element: <MoviePage></MoviePage>
       }
     ]
   },
