@@ -9,7 +9,7 @@ import App from "./App";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Services from "./pages/Services";
-// import Details from "./components/Details";
+import Details from "./components/Details";
 import Register from "./pages/Register";
 
 const router = createBrowserRouter([
@@ -29,11 +29,11 @@ const router = createBrowserRouter([
         path: "/services",
         element: <Services></Services>
       },
-      // {
-      //   path: "/details/:stringId",
-      //   element: <Details></Details>,
-      //   loader: () => fetch("/services.json")
-      // },
+      {
+        path: "/details/:id",
+        element: <Details></Details>,
+        loader: () => fetch("/services.json")
+      },
       {
         path: "/register",
         element: <Register></Register>

@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import Eventum from "../../src/assets/rsz_eventum.png";
+import avater from "../../src/assets/avater-removebg-preview.png";
 import { useEffect, useState } from "react";
 
 
@@ -22,14 +23,14 @@ const Header = () => {
         };
     }, [])
 
-    const navbarClasses = ` fixed  top-0 w-full z-10 " ${scrolling ? 'bg-white shadow-lg text-black ' : 'text-white'}`;
+    const navbarClasses = ` fixed  top-0 w-full z-10 bg-[#1F242D] " ${scrolling ? 'bg-[#fff] shadow-lg text-black ' : 'text-white'}`;
 
 
     const links = <>
         <NavLink className="nav" to="/">Home</NavLink>
-        <NavLink className="nav" to="/about">Profile</NavLink>
         <NavLink className="nav" to="/events">Events</NavLink>
-        <NavLink className="nav" to="/contact">Contact</NavLink>
+        <NavLink className="nav" to="/login">Login</NavLink>
+        <NavLink className="nav" to="/register">Register</NavLink>
     </>
 
 
@@ -54,8 +55,8 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end hidden sm:flex ">
-                    <Link to="/register">  <button className="button mr-4">Register</button></Link>
-                    <Link to="/login"> <button className="button btn-fill">Login</button></Link>
+                    <Link to="/register"><img className="w-14 mr-5" src={avater} alt="" /></Link>
+                    <Link to="/"> <button className="button btn-fill">Logout</button></Link>
                 </div>
             </div>
         </div>
