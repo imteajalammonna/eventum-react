@@ -36,16 +36,16 @@ const Footer = () => {
                     <div className="grid grid-flow-col gap-4 ">
 
                         <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/imteajalammonna">
-                            <FaFacebook className="text-2xl text-[#0866FF] hover:text-[#FE0233]" ></FaFacebook>
+                            <FaFacebook className="text-2xl text-[#0866FF] hover:text-black transition-all" ></FaFacebook>
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/imteajalammonna/">
-                            <FaInstagram className="text-2xl text-[rgb(250,58,180)] hover:text-[#FE0233]"></FaInstagram>
+                            <FaInstagram className="text-2xl text-[rgb(250,58,180)] hover:text-black transition-all"></FaInstagram>
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/imteaj-alam-monna/">
-                            <FaLinkedin className="text-2xl text-[#0A66C2] hover:text-[#FE0233]" ></FaLinkedin>
+                            <FaLinkedin className="text-2xl text-[#0A66C2] hover:text-black transition-all" ></FaLinkedin>
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCmqM9MJMAybSmfBG-JHvNlg">
-                            <FaYoutube className="text-2xl text-[#FF0000] hover:text-[#FE0233]" ></FaYoutube>
+                            <FaYoutube className="text-2xl text-[#FF0000] hover:text-black transition-all" ></FaYoutube>
                         </a>
 
                     </div>

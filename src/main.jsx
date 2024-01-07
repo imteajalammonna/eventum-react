@@ -11,7 +11,6 @@ import Login from "./pages/Login";
 import Services from "./pages/Services";
 // import Details from "./components/Details";
 import Register from "./pages/Register";
-import MoviePage from "./pages/MoviePage";
 
 const router = createBrowserRouter([
   {

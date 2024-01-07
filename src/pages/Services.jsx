@@ -7,6 +7,8 @@ import "aos/dist/aos.css";
 
 const About = () => {
     const [services, setServices] = useState([]);
+    const [servicesLength, SetServicesLength] = useState(4);
+
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/rahathossenantor/aayojan/main/public/eventData.json')
@@ -24,11 +26,16 @@ const About = () => {
         <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5
         ">
             <div className="my-20 " data-aos="fade-down">
-            <h2 className=" my-10 text-center text-5xl font-semibold font-poppins">Our <span className="text-[#FE0233]">Services</span></h2>
+                <h2 className=" my-10 text-center text-5xl font-semibold font-poppins">Our <span className="text-[#FE0233]">Services</span></h2>
                 <div className="grid gap-5 xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 grid-cols-1 place-items-center justify-center">
                     {
-                        services.map((service) => <Service key={service.id} service={service}></Service>)
+                        services.slice(0, servicesLength).map((service) => <Service key={service.id} service={service}></Service>)
                     }
+                </div>
+                <div className={`flex items-center justify-center mt-14 ${servicesLength === services.length && "hidden"}`}>
+                    <button
+                        onClick={() => SetServicesLength(services.length)}
+                        className="button">View All</button>
                 </div>
             </div>
         </div>
