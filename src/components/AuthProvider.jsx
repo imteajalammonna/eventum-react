@@ -1,15 +1,17 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../Utility/Firebase.config";
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext([]);
 
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
+const FacebookProvider = new FacebookAuthProvider();
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState([]);
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -30,7 +32,25 @@ const AuthProvider = ({ children }) => {
     }
 
     const signInWithGoogle = () => {
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                console.log(result);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+    const signInWithGithub = () => {
+        signInWithPopup(auth, githubProvider)
+            .then((result) => {
+                console.log(result);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+    const signInWithFacebook = () => {
+        signInWithPopup(auth, FacebookProvider)
             .then((result) => {
                 console.log(result);
             })
@@ -55,7 +75,8 @@ const AuthProvider = ({ children }) => {
         logOut,
         signIn,
         signInWithGoogle,
-
+        signInWithGithub,
+        signInWithFacebook
     }
     return (
         <AuthContext.Provider value={authInfo}>

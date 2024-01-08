@@ -1,18 +1,22 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook, FaGithub } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
 
-    const {  signIn } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, signInWithGithub, signInWithFacebook } = useContext(AuthContext);
 
     const handleLogin = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email , password);
+        console.log(email, password);
         signIn(email, password)
             .then(result => {
                 console.log(result)
@@ -20,6 +24,19 @@ const Login = () => {
             .catch(error => {
                 console.error(error)
             })
+        toast("You have logged in Successfully!")
+    }
+    const handleGoogleSingIn = () => {
+        signInWithGoogle();
+        toast("You have logged in Successfully!")
+    }
+    const handleGithubSingIn = () => {
+        signInWithGithub();
+        toast("You have logged in Successfully!")
+    }
+    const handleFacebookSignIn = () => {
+        signInWithFacebook();
+        toast("You have logged in Successfully!")
     }
 
     return (
@@ -48,13 +65,18 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button  className="button btn-fill">Login</button>
+                                <button className="button btn-fill">Login</button>
                             </div>
                             <p>New to here? Please <Link to="/register" className="underline text-[#06d425]">Register here</Link> </p>
                         </form>
+                        <div className="flex items-center justify-center text-4xl mb-8">
+                            <button className="mx-3" onClick={handleGoogleSingIn}><FcGoogle /></button>
+                            <button className="mx-3" onClick={handleGithubSingIn}><FaGithub /></button>
+                            <button className="mx-3" onClick={handleFacebookSignIn}><FaFacebook /></button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div>  <ToastContainer></ToastContainer>
         </div>
     );
 };

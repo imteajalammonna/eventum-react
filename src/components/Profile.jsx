@@ -6,7 +6,7 @@ const Profile = () => {
 
     const { user } = useContext(AuthContext);
 
-    const { displayName, photoURL,email } = user;
+    const { displayName, photoURL, email } = user || [];
 
     return (
         <div className="container min-h-[80vh] mt-28 mx-auto p-4">

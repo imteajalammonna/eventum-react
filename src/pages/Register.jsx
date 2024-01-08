@@ -2,10 +2,13 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import { FaFacebook, FaGithub } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
-    const { createUser ,signInWithGoogle } = useContext(AuthContext);
+    const { createUser, signInWithGoogle, signInWithGithub, signInWithFacebook } = useContext(AuthContext);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -22,10 +25,20 @@ const Register = () => {
             .catch(error => {
                 console.error(error)
             })
+        toast("You have logged in Successfully!")
     }
 
     const handleGoogleSingIn = () => {
         signInWithGoogle();
+        toast("You have logged in Successfully!")
+    }
+    const handleGithubSingIn = () => {
+        signInWithGithub();
+        toast("You have logged in Successfully!")
+    }
+    const handleFacebookSignIn = () => {
+        signInWithFacebook();
+        toast("You have logged in Successfully!")
     }
     return (
         <div className="bg-gray-400 ">
@@ -70,12 +83,15 @@ const Register = () => {
                             <p>Already have an account? <Link to="/login" className="underline text-[#06d425]">Login here</Link> </p>
 
                         </form>
-                        <div className="flex items-center justify-center text-3xl mb-8">
-                            <button onClick={handleGoogleSingIn} className=""><FcGoogle /></button>
+                        <div className="flex items-center justify-center text-4xl mb-8">
+                            <button className="mx-3" onClick={handleGoogleSingIn}><FcGoogle /></button>
+                            <button className="mx-3" onClick={handleGithubSingIn}><FaGithub /></button>
+                            <button className="mx-3" onClick={handleFacebookSignIn}><FaFacebook /></button>
                         </div>
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
