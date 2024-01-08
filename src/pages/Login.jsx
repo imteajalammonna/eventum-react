@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../components/AuthProvider";
 
 
 const Login = () => {
+
+    const {  signIn } = useContext(AuthContext);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -9,11 +13,18 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(email , password);
+        signIn(email, password)
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
 
     return (
         <div className="bg-gray-400">
-            <div className="hero  my-16 md:container md:mx-auto ">
+            <div className="hero  min-h-screen md:container md:mx-auto ">
                 <div className="md:hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold mt-20">Login now!</h1>

@@ -36,10 +36,10 @@ const Header = () => {
             .catch(error => {
                 console.log(error);
             });
-            toast("You have logout Successfully")
+        toast("You have logout Successfully")
     }
 
-    const navbarClasses = ` fixed  top-0 w-full z-10 bg-[#1F242D] " ${scrolling ? 'bg-[#fff] shadow-lg text-black ' : 'text-green-500'}`;
+    const navbarClasses = ` fixed  top-0 w-full z-10 bg-[#1F242D] " ${scrolling ? 'bg-[#fff] shadow-lg text-black ' : 'text-[#00FFFF]'}`;
 
 
     const links = <>
@@ -71,9 +71,14 @@ const Header = () => {
                 </div>
                 <div className="navbar-end hidden sm:flex ">
                     {
-                        user && <h3 className="text-xl text-green-400  mr-3">{user?.email}</h3>
+                     user?.displayName ?
+                            <h3 className="text-xl mr-4">{user?.displayName}</h3> :
+                            <h3 className="text-xl mr-4">{user?.email}</h3>
                     }
-                    <Link to="/register"><img className="w-14 mr-5" src={avater} alt="" /></Link>
+                    {
+                        user ? <Link user={user} to="/profile"> <img className="rounded-full w-12 mr-5" src={user.photoURL} alt="" /></Link> :
+                            <img className="w-14 mr-5" src={avater} alt="" />
+                    }
                     {
                         user ?
                             <button onClick={handleLogOut} className="button">LogOut</button> :

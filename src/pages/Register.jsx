@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
-
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser ,signInWithGoogle } = useContext(AuthContext);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -22,6 +22,10 @@ const Register = () => {
             .catch(error => {
                 console.error(error)
             })
+    }
+
+    const handleGoogleSingIn = () => {
+        signInWithGoogle();
     }
     return (
         <div className="bg-gray-400 ">
@@ -64,7 +68,11 @@ const Register = () => {
                                 <button className="button btn-fill">Register</button>
                             </div>
                             <p>Already have an account? <Link to="/login" className="underline text-[#06d425]">Login here</Link> </p>
+
                         </form>
+                        <div className="flex items-center justify-center text-3xl mb-8">
+                            <button onClick={handleGoogleSingIn} className=""><FcGoogle /></button>
+                        </div>
                     </div>
                 </div>
             </div>

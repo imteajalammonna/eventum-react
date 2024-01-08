@@ -13,6 +13,7 @@ import Details from "./components/Details";
 import Register from "./pages/Register";
 import AppliedEvents from "./pages/AppliedEvents";
 import AuthProvider from "./components/AuthProvider";
+import Profile from "./components/Profile";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/events",
         element: <AppliedEvents></AppliedEvents>
+      },
+      {
+        path: "/profile",
+        element: <Profile></Profile>
       },
 
     ]
