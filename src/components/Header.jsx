@@ -1,11 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
 import Eventum from "../../src/assets/rsz_eventum.png";
 import avater from "../../src/assets/avater-removebg-preview.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "./AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Header = () => {
     const [scrolling, setScrolling] = useState(false);
+
+    const { user, logOut } = useContext(AuthContext);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,7 +28,18 @@ const Header = () => {
         };
     }, [])
 
-    const navbarClasses = ` fixed  top-0 w-full z-10 bg-[#1F242D] " ${scrolling ? 'bg-[#fff] shadow-lg text-black ' : 'text-white'}`;
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+            toast("You have logout Successfully")
+    }
+
+    const navbarClasses = ` fixed  top-0 w-full z-10 bg-[#1F242D] " ${scrolling ? 'bg-[#fff] shadow-lg text-black ' : 'text-green-500'}`;
 
 
     const links = <>
@@ -32,7 +48,6 @@ const Header = () => {
         <NavLink className="nav" to="/login">Login</NavLink>
         <NavLink className="nav" to="/register">Register</NavLink>
     </>
-
 
 
     return (
@@ -55,10 +70,18 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end hidden sm:flex ">
+                    {
+                        user && <h3 className="text-xl text-green-400  mr-3">{user?.email}</h3>
+                    }
                     <Link to="/register"><img className="w-14 mr-5" src={avater} alt="" /></Link>
-                    <Link to="/"> <button className="button btn-fill">Logout</button></Link>
+                    {
+                        user ?
+                            <button onClick={handleLogOut} className="button">LogOut</button> :
+                            <Link to="/login"> <button className="button btn-fill">Login</button></Link>
+                    }
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

@@ -1,7 +1,28 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../components/AuthProvider";
 
 
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext);
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name, photo, email, password);
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
     return (
         <div className="bg-gray-400 ">
             <div className="md:hero md:min-h-screen md:container md:mx-auto ">
@@ -11,12 +32,18 @@ const Register = () => {
                         <p className="py-6 md:w-[500px]">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
                     <div className="card mx-auto shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleRegister} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="text" name="name" placeholder="Your Name" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo</span>
+                                </label>
+                                <input type="photo" name="photo" placeholder="Photo" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
