@@ -35,7 +35,7 @@ const AppliedEvents = () => {
                                 {/* <h1 className="text-2xl md:text-4xl text-[#FE0030] font-bold">{event.title}</h1> */}
                                 <h4 className="text-3xl text-white">Hotel: {event.hotel_name}</h4>
                                 <p className="text-2xl">Price: ${event.price}</p>
-                                <Link to="/:id"><button className="button btn-fill w-28">Details</button></Link>
+                                <Link to={`/details/${event.id}`}><button className="button btn-fill w-28">Details</button></Link>
                             </div>
                         </div>)
                 }
