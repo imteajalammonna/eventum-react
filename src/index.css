@@ -5,169 +5,178 @@
 @tailwind utilities;
 
 * {
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 #banner {
-    background-image: url("https://i.ibb.co/h7FvBtJ/banner.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("https://i.ibb.co/h7FvBtJ/banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .banner-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .pending {
-    background-color: #FE0233;
+  background-color: #FE0233;
 }
 
 .active {
-    color: #FE0233;
+  color: #FE0233;
 }
 
 .nav {
-    margin-inline-start: 0px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-inline-end: 25px;
+  margin-inline-start: 0px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-inline-end: 25px;
 }
 
 /* CSS */
 
 .btn-box {
-    display: flex;
-    justify-content: space-between;
-    width: 345px;
-    height: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
 }
 
 .btn-box button {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 100%;
-    background: #FE0233;
-    border: 2px solid #FE0233;
-    border-radius: 5px;
-    font-size: 19px;
-    color: red;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-    z-index: 1;
-    transition: 0.5s;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  background: #FE0233;
+  border: 2px solid #FE0233;
+  border-radius: 5px;
+  font-size: 19px;
+  color: red;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  transition: 0.5s;
 }
 
-.btn-box button:nth-child(1){
-    color: white;
-    
+.btn-box button:nth-child(1) {
+  color: white;
+
 }
 
 .btn-box button:nth-child(2) {
-    background: transparent;
-    color: #FE0233;
+  background: transparent;
+  color: #FE0233;
 }
+
 .btn-box button:nth-child(2):hover {
-    color: white;
-}
-.btn-box button::before {
-    background-color: transparent;
+  color: white;
 }
 
 .btn-box button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: #FE0233;
-    z-index: -1;
-    transition: 0.5s;
-    overflow: hidden;
+  background-color: transparent;
+}
+
+.btn-box button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #FE0233;
+  z-index: -1;
+  transition: 0.5s;
+  overflow: hidden;
 }
 
 .btn-box button:hover::before {
-    width: 100%;
-    color: #FE0233;
+  width: 100%;
+  color: #FE0233;
 
 }
 
 
 .button {
-    /* appearance: none; */
-    background-color: transparent;
-    border: 2px solid #FE0233;
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #FE0233;
-    cursor: pointer;
-    /* display: inline-block; */
-    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 18px;
-    font-weight: 600;
-    line-height: normal;
-    /* margin: 0px 10px; */
-    min-height: 50px;
-    min-width: 500;
-    outline: none;
-    padding: 0px 25px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    /* width: 100%; */
-    will-change: transform;
+  /* appearance: none; */
+  background-color: transparent;
+  border: 2px solid #FE0233;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FE0233;
+  cursor: pointer;
+  /* display: inline-block; */
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  /* margin: 0px 10px; */
+  min-height: 50px;
+  min-width: 500;
+  outline: none;
+  padding: 0px 25px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  /* width: 100%; */
+  will-change: transform;
 }
 
 .button:disabled {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .button:hover {
-    color: #fff;
-    background-color: #FE0233;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
+  color: #fff;
+  background-color: #FE0233;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
 }
 
 .button:active {
-    box-shadow: none;
-    transform: translateY(0);
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 .btn-fill {
-    background-color: #FE0233;
-    color: #ffff;
+  background-color: #FE0233;
+  color: #ffff;
 }
 
 .btn-fill:hover {
-    background-color: transparent;
-    color: #FE0233;
+  background-color: transparent;
+  color: #FE0233;
 }
 
 /* Loader css */
 /* HTML: <div class="loader"></div> */
 .loader {
-    width: 50px;
-    --b: 8px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: #514b82;
-    -webkit-mask:
-      repeating-conic-gradient(#0000 0deg,#000 1deg 70deg,#0000 71deg 90deg),
-      radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
-    -webkit-mask-composite: destination-in;
-            mask-composite: intersect;
-    animation: l5 1s infinite;
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #514b82;
+  -webkit-mask:
+    repeating-conic-gradient(#0000 0deg, #000 1deg 70deg, #0000 71deg 90deg),
+    radial-gradient(farthest-side, #0000 calc(100% - var(--b) - 1px), #000 calc(100% - var(--b)));
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l5 1s infinite;
+}
+
+@keyframes l5 {
+  to {
+    transform: rotate(.5turn)
   }
-  @keyframes l5 {to{transform: rotate(.5turn)}}
+}
 
 
 
@@ -179,122 +188,138 @@
 
 
 
-  .containers {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: auto;
-    filter: url("#goo");
-    animation: rotate-move .4s ease-in-out infinite;
+.containers {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  filter: url("#goo");
+  animation: rotate-move .4s ease-in-out infinite;
+}
+
+.dot {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.dot-3 {
+  background-color: #ff1717;
+  animation: dot-3-move 1s ease infinite, index 1s ease infinite;
+}
+
+.dot-2 {
+  background-color: #0051ff;
+  animation: dot-2-move 1s ease infinite, index 6s -1s ease infinite;
+}
+
+.dot-1 {
+  background-color: #ffc400;
+  animation: dot-1-move 1s ease infinite, index 6s -1s ease infinite;
+}
+
+@keyframes dot-3-move {
+  20% {
+    transform: scale(1);
   }
-  
-  .dot {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: #000;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+
+  45% {
+    transform: translateY(-18px) scale(0.45);
   }
-  
-  .dot-3 {
-    background-color: #ff1717;
-    animation: dot-3-move 1s ease infinite, index 1s ease infinite;
+
+  60% {
+    transform: translateY(-90px) scale(0.45);
   }
-  
-  .dot-2 {
-    background-color: #0051ff;
-    animation: dot-2-move 1s ease infinite, index 6s -1s ease infinite;
+
+  80% {
+    transform: translateY(-90px) scale(0.45);
   }
-  
-  .dot-1 {
-    background-color: #ffc400;
-    animation: dot-1-move 1s ease infinite, index 6s -1s ease infinite;
+
+  100% {
+    transform: translateY(0px) scale(1);
   }
-  
-  @keyframes dot-3-move {
-    20% {
-      transform: scale(1);
-    }
-    45% {
-      transform: translateY(-18px) scale(0.45);
-    }
-    60% {
-      transform: translateY(-90px) scale(0.45);
-    }
-    80% {
-      transform: translateY(-90px) scale(0.45);
-    }
-    100% {
-      transform: translateY(0px) scale(1);
-    }
+}
+
+@keyframes dot-2-move {
+  20% {
+    transform: scale(1);
   }
-  
-  @keyframes dot-2-move {
-    20% {
-      transform: scale(1);
-    }
-    45% {
-      transform: translate(-16px, 12px) scale(0.45);
-    }
-    60% {
-      transform: translate(-80px, 60px) scale(0.45);
-    }
-    80% {
-      transform: translate(-80px, 60px) scale(0.45);
-    }
-    100% {
-      transform: translateY(0px) scale(1);
-    }
+
+  45% {
+    transform: translate(-16px, 12px) scale(0.45);
   }
-  
-  @keyframes dot-1-move {
-    20% {
-      transform: scale(1);
-    }
-    45% {
-      transform: translate(16px, 12px) scale(0.45);
-    }
-    60% {
-      transform: translate(80px, 60px) scale(0.45);
-    }
-    80% {
-      transform: translate(80px, 60px) scale(0.45);
-    }
-    100% {
-      transform: translateY(0px) scale(1);
-    }
+
+  60% {
+    transform: translate(-80px, 60px) scale(0.45);
   }
-  
-  @keyframes rotate-move {
-    55% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    80% {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
+
+  80% {
+    transform: translate(-80px, 60px) scale(0.45);
   }
-  
-  @keyframes index {
-    0%,
-    100% {
-      z-index: 3;
-    }
-    33.3% {
-      z-index: 2;
-    }
-    66.6% {
-      z-index: 1;
-    }
+
+  100% {
+    transform: translateY(0px) scale(1);
   }
-  
+}
+
+@keyframes dot-1-move {
+  20% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: translate(16px, 12px) scale(0.45);
+  }
+
+  60% {
+    transform: translate(80px, 60px) scale(0.45);
+  }
+
+  80% {
+    transform: translate(80px, 60px) scale(0.45);
+  }
+
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes rotate-move {
+  55% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  80% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes index {
+
+  0%,
+  100% {
+    z-index: 3;
+  }
+
+  33.3% {
+    z-index: 2;
+  }
+
+  66.6% {
+    z-index: 1;
+  }
+}

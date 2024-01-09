@@ -9,12 +9,13 @@ const Details = () => {
 
     const services = useLoaderData();
     const { id } = useParams();
+    const idInt = JSON.parse(id);
 
     const service = services.find(service => service.id === JSON.parse(id));
     const { title, hotel, description, price, hotel_name, short_description } = service;
 
     const SetServiceLS = () => {
-        SetNewServiceLS(id)
+        SetNewServiceLS(idInt)
         toast("You have Booked Successfully")
     }
     return (

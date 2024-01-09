@@ -44,7 +44,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/events",
-        element: <PrivateRoute><AppliedEvents></AppliedEvents></PrivateRoute>
+        element: <PrivateRoute><AppliedEvents></AppliedEvents></PrivateRoute>,
+        loader: () => fetch("/services.json")
       },
       {
         path: "/profile",
