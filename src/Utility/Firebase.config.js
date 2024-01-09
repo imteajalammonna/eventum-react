@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBpY45qSaAUufs9St1hoEBkXQcEsVTWK3o",
-  authDomain: "eventum-react.firebaseapp.com",
-  projectId: "eventum-react",
-  storageBucket: "eventum-react.appspot.com",
-  messagingSenderId: "895299740143",
-  appId: "1:895299740143:web:b84be62dd18bdd7b89161a"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

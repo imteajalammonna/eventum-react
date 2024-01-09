@@ -14,6 +14,7 @@ import Register from "./pages/Register";
 import AppliedEvents from "./pages/AppliedEvents";
 import AuthProvider from "./components/AuthProvider";
 import Profile from "./components/Profile";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details></Details>,
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: () => fetch("/services.json")
       },
       {
@@ -43,11 +44,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/events",
-        element: <AppliedEvents></AppliedEvents>
+        element: <PrivateRoute><AppliedEvents></AppliedEvents></PrivateRoute>
       },
       {
         path: "/profile",
-        element: <Profile></Profile>
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       },
 
     ]

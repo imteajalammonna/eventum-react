@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaGithub } from "react-icons/fa";
@@ -10,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
     const { signIn, signInWithGoogle, signInWithGithub, signInWithFacebook } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -20,6 +22,8 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result)
+
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.error(error)
@@ -28,14 +32,17 @@ const Login = () => {
     }
     const handleGoogleSingIn = () => {
         signInWithGoogle();
+        navigate(location?.state ? location.state : '/');
         toast("You have logged in Successfully!")
     }
     const handleGithubSingIn = () => {
         signInWithGithub();
+        navigate(location?.state ? location.state : '/');
         toast("You have logged in Successfully!")
     }
     const handleFacebookSignIn = () => {
         signInWithFacebook();
+        navigate(location?.state ? location.state : '/');
         toast("You have logged in Successfully!")
     }
 
