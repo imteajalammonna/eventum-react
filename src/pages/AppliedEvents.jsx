@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { getStoredService } from "../Utility/localstorage";
 
 
@@ -8,13 +8,12 @@ const AppliedEvents = () => {
     const events = useLoaderData();
     const [appliedEvent, setAppliedEvent] = useState([])
 
+
     useEffect(() => {
         const storedIds = getStoredService();
         if (events) {
             const eventsApplied = events.filter(event => storedIds.includes(event.id))
             setAppliedEvent(eventsApplied)
-
-            console.log(eventsApplied);
         }
     }, [events])
 
@@ -36,7 +35,7 @@ const AppliedEvents = () => {
                                 {/* <h1 className="text-2xl md:text-4xl text-[#FE0030] font-bold">{event.title}</h1> */}
                                 <h4 className="text-3xl text-white">Hotel: {event.hotel_name}</h4>
                                 <p className="text-2xl">Price: ${event.price}</p>
-                                <button className="button btn-fill w-28">Details</button>
+                                <Link to="/:id"><button className="button btn-fill w-28">Details</button></Link>
                             </div>
                         </div>)
                 }
