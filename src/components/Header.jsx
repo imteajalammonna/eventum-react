@@ -39,7 +39,7 @@ const Header = () => {
         toast("You have logout Successfully")
     }
 
-    const navbarClasses = ` fixed  top-0 w-full z-10 bg-[#1F242D] " ${scrolling ? 'bg-[#fff] shadow-lg text-black ' : 'text-[#3B82F5]'}`;
+    const navbarClasses = ` fixed  top-0 w-full z-10 bg-[#1F242D] " ${scrolling ? 'bg-[#fff] shadow-lg text-black ' : 'text-[#00ffff] '}`;
 
 
     const links = <>
@@ -62,7 +62,7 @@ const Header = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to="/" className=" text-2xl font-bold flex items-center justify-center"><img className="w-9 h-auto rounded-xl mr-2" src={Eventum} alt="" /> EVENTUM</Link>
+                    <Link to="/" className=" text-4xl font-bol flex items-center justify-center  font-[Lemon]"><img className="w-9 h-auto rounded-xl mr-2" src={Eventum} alt="" /> EVENTUM</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal text-xl px-1">
@@ -78,7 +78,7 @@ const Header = () => {
                     </NavLink>
                     {
                         user ? <Link user={user} to="/profile"> <img className="rounded-full w-12 mr-5" src={user.photoURL} alt="" /></Link> :
-                            <img className="w-14 mr-5" src={avater} alt="" />
+                            <Link to="/profile"><img className="w-14 mr-5" src={avater} alt="" /></Link>
                     }
                     {
                         user ?

@@ -7,7 +7,6 @@ const AppliedEvents = () => {
 
     const events = useLoaderData();
     const [appliedEvent, setAppliedEvent] = useState([])
-    const { title } = appliedEvent;
 
     useEffect(() => {
         const storedIds = getStoredService();

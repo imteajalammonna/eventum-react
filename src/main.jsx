@@ -15,11 +15,13 @@ import AppliedEvents from "./pages/AppliedEvents";
 import AuthProvider from "./components/AuthProvider";
 import Profile from "./components/Profile";
 import PrivateRoute from "./Routes/PrivateRoute";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<NotFound></NotFound>,
     children: [
       {
         path: "/",
